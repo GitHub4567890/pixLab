@@ -27,6 +27,42 @@ public class IntArrayWorker
     }
     return total;
   }
+
+  /**
+   * Method to return the number of times a value comes up in the array
+   * @return the times the value shows up in the array
+   */
+  public int getCount(int num) {
+    int times = 0;
+    for (int[] aaa : matrix) {
+      for (int a : aaa) {
+        if (a == num) {
+          times++;
+        }
+      }
+    }
+    return times;
+  }
+
+  public int getLargest() {
+    int largest = matrix[0][0];
+    for (int[] aaa : matrix) {
+      for (int a : aaa) {
+        if (a > largest) {
+          largest = a;
+        }
+      }
+    }
+    return largest;
+  }
+
+  public int getColTotal(int col) {
+    int total = 0;
+    for (int i = 0; i <= matrix.length - 1; i++) {
+      total += matrix[i][col];
+    }
+    return total;
+  }
   
   /**
    * Method to return the total using a nested for-each loop
