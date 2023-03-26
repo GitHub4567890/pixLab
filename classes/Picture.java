@@ -216,8 +216,59 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
-  
+
+  public void keepOnlyBlue() {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+
+
+  public void negate() {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels) {
+      for (Pixel pixelObj : rowArray) {
+        pixelObj.setRed(255 - pixelObj.getRed());
+        pixelObj.setBlue(255 - pixelObj.getBlue());
+        pixelObj.setGreen(255 - pixelObj.getGreen());
+      }
+    }
+  }
+
+  public void grayscale() {
+    int avg = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels) {
+      avg = 0;
+      for (Pixel pixelObj : rowArray) {
+        avg += pixelObj.getRed();
+        avg += pixelObj.getBlue();
+        avg += pixelObj.getGreen();
+        avg /= 3;
+        pixelObj.setRed(avg);
+        pixelObj.setBlue(avg);
+        pixelObj.setGreen(avg);
+      }
+    }
+  }
+
+  public void fixUnderwater() {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels) {
+      for (Pixel pixelObj : rowArray) {
+        pixelObj.setGreen(pixelObj.getGreen() - 50);
+        pixelObj.setRed(pixelObj.getRed() + 50);
+        pixelObj.setBlue(pixelObj.getBlue() - 25);
+      }
+    }
+  }
+
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
