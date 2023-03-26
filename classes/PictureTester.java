@@ -20,7 +20,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
+    Picture caterpillar = new Picture("swan.jpg");
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
@@ -80,6 +80,48 @@ public class PictureTester
     water.explore();
   }
 
+  public static void testMirrorVerticalRightToLeft() {
+    Picture caterpillar = new Picture("swan.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorVerticalRightToLeft();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorHorizontal() {
+    Picture swan = new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorHorizontal();
+    swan.explore();
+  }
+
+  public static void testMirrorHorizontalBottomToTop() {
+    Picture swan = new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorHorizontalBottomToTop();
+    swan.explore();
+  }
+
+  public static void testMirrorDiagonal() {
+    Picture swan = new Picture("swan.jpg");
+    swan.explore();
+    swan.mirrorDiagonal();
+    swan.explore();
+  }
+
+  public static void testMirrorArms() {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorArms();
+    snowman.explore();
+  }
+
+  public static void testMirrorGull() {
+    Picture seagull = new Picture("seagull.jpg");
+    seagull.explore();
+    seagull.mirrorGull();
+    seagull.explore();
+  }
+
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -93,11 +135,14 @@ public class PictureTester
 //    testKeepOnlyGreen();
 //    testNegate();
 //    testGrayscale();
-    testFixUnderwater();
+//    testFixUnderwater();
 //    testMirrorVertical();
+//    testMirrorVerticalRightToLeft();
+//    testMirrorHorizontal();
+//    testMirrorHorizontalBottomToTop();
 //    testMirrorTemple();
 //    testMirrorArms();
-//    testMirrorGull();
+    testMirrorGull();
 //    testMirrorDiagonal();
 //    testCollage();
 //    testCopy();
